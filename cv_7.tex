@@ -1,0 +1,505 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.3 (29/10/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+\usepackage{ragged2e}
+% \usepackage[outermarks]{titleps} % let's assume top/bot
+% \def\presectiontitle{}
+% \newpagestyle{main}{
+%   \sethead{}
+%           {\sectiontitle
+%            \ifx\sectiontitle\presectiontitle
+%             \ (cont.)
+%            \fi
+%            \bottitlemarks
+%            \global\let\presectiontitle\sectiontitle}
+%           {\thepage}}
+% \pagestyle{main}
+
+\moderncvstyle{casual} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.75]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+\usepackage{everyshi}% http://ctan.org/pkg/everyshi
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\makeatletter
+\let\@section@title@\relax% Sectional heading storage
+\patchcmd{\@sect}% <cmd>
+  {\@xsect}% <search>
+  {\gdef\@section@title@{% Store sectional heading
+    {\noindent#6\@svsec#8\normalfont\ \smash{(continued)}}\par\bigskip}\@xsect}% <replace>
+  {}{}% <success><failure>
+\EveryShipout{%
+  \ifdim\pagetotal>\pagegoal% There is content overflow on this page
+    \aftergroup\@section@title@% Reprint/-insert sectional heading
+  \fi%
+}
+\makeatother
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Roc\'io} % Your first name
+\familyname{Joo} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+%\title{Curriculum Vitae}
+\address{Roc\'io Joo. Global Fishing Watch}{}
+% \mobile{(+33) 0624646821}
+%\phone{(000) 111 1112}
+%\fax{(000) 111 1113}
+\email{rocio.joo@globalfishingwatch.org}
+%\homepage{www.researchgate.net/profile/Rocio_Joo/contributions}{www.researchgate.net/profile/Rocio_Joo/contributions} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+% \extrainfo{additional information}
+%\photo[50pt][0.2pt]{pictures/meRio2.png} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+%\quote{"A witty and playful quotation" - John Smith}
+
+%----------------------------------------------------------------------------------------
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	CURRICULUM VITAE
+%----------------------------------------------------------------------------------------
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS
+%----------------------------------------------------------------------------------------
+
+\section{Research Interests} 
+\cventry{}{}{}{}{}{Particular interests include: trajectory analysis, movement ecology, spatial behaviour, spatio-temporal modelling, machine learning, hierarchical modelling.}  % Arguments not 
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\cventry{2010--2013}{PhD in Ecosystems (Quantitative Ecology)}{University of Montpellier 2 (UM2)}{France}{}{}  % Arguments not required can be left empty
+\cventry{2009--2010}{Master in Mathematics, Statistics and Applications}{Montpellier SupAgro - UM2}{France}{}{}
+\cventry{2002--2007}{Bachelor of Engineering in Statistics}{National University of Engineering (UNI)}{Peru}{}{}
+
+\subsection{Complementary Training}
+
+\cventry{Nov. 2018 \\ (18 hours)}{Stochastic partial differential equations modeling and INLA}{RESSTE network}{Avignon}{France}{}
+
+\cventry{Jun. 2018 \\ (7 hours)}{Geostatistical analysis of spatio-temporal data with R}{RESSTE network}{METMA IX, Montpellier}{France}{}
+
+\cventry{Oct. 2014 \\ (25 hours)}{Ecology and behavior of marine top predators}{Dr. Carlos Zavalaga and Dr. Yann Tremblay}{College of Sciences and Philosophy, Universidad Peruana Cayetano Heredia (UPCH)}{Peru}{}
+
+
+\cventry{Dec. 2012 \\ (7 hours)}{Python language for scientific computing}{Dr. Pascal Neveu}{UNI}{Peru}{}
+
+\cventry{May - Jul. 2007 \\ (30 hours)}{Modelling and Analysing Data Networks Performance}{Study group leader: Dr. Loretta Gasco}{Pontifical Catholic University of Peru (PUCP)}{Peru}{}
+
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Research and Work Experience} 
+
+\cventry{2021--present}{Data scientist}{\textsc{Global Fishing Watch}}{Remote}{}{}
+\cvitem{Description}{My main focus at the moment is a project to identify high risk of forced labor behavior at sea.}
+
+\cventry{2018--2021}{Postdoctoral associate}{\textsc{University of Florida}}{Fort Lauderdale}{USA}{}
+\cvitem{Subject}{\emph{Seabird movement ecology modelling}}
+\cvitem{Supervisor}{Dr. Mathieu Basille}
+\cvitem{Description}{Modelling seabird movement at multiple spatiotemporal scales using tracking data, and quantifying the association between movement patterns and environmental cues. Review of R packages for movement and participating in the creation of one. \textit{One first-authored publication} has been accepted, one is available as a pre-print and the third one in preparation.}
+
+\cventry{2016--2017}{Postdoctoral associate}{\textsc{French Research Institute for Exploitation of the Sea}}{Nantes}{France}{}
+\cvitem{Subject}{\emph{Assessing joint-movement behaviour in ecology}}
+\cvitem{Supervisor}{Dr. Stephanie Mahevas}
+\cvitem{Description}{A review of indices from the literature (medicine, physics, computer analysis, ecology, sports, psychology, etc.) for measuring dyad interaction was made and applied to simulated data. Then, a subset of indices was chosen and applied to several sets of fisher trajectories to analyse collective movement behaviour and strategies. All codes were written in R. \textit{One first-author publication} is in review and one published.}
+
+\cventry{2014--2016}{Research associate}{\textsc{Peruvian Marine Research Institute (IMARPE)}}{Callao}{Peru}{}
+\cvitem{Subject}{\emph{Spatiotemporal dynamics of the Peruvian fishing fleets}}
+%\cvitem{Supervisor}{Dr. Stephanie Mahevas}
+\cvitem{Description}{Analysis of spatial and temporal dynamics of fishing effort from the industrial anchovy and the multispecific artisanal fleets. Development of spatial indicators for monitoring both the fishery and the state of the resources (acoustic surveys). Computation of sampling size optima for at-sea observers via simulation. Programming in Matlab and R. \textit{Two first-author publications} were produced.}
+
+\cventry{2013}{Postdoctoral associate}{\textsc{Institute of Research for Development (IRD)}}{Sete}{France}{}
+\cvitem{Subject}{\emph{Modelling the trajectories of floating artificial devices and their associations to fishing vessel movement}}
+\cvitem{Supervisor}{Dr. David Kaplan}
+\cvitem{Description}{Identification of `at sea' and `on board' (of a vessel) patterns in floating artificial devices trajectories through the use of hidden Markov and semi-Markov models, random forests and hybrid discriminative-generative models. All codes were written in R. \textit{One co-authored publication} was produced.}
+
+\cventry{2010--2013}{PhD Thesis}{\textsc{UM2}}{Montpellier}{France}{}
+\cvitem{Subject}{\emph{Characterizing fishermen spatial behaviour: hidden stories from trajectory data. A 2000-2009 study on the Northern Humboldt Current System.}}
+\cvitem{Supervisors}{Dr. Sophie Bertrand (IRD) and Dr. Ronan Fablet (Telecom-Bretagne)}
+\cvitem{Description}{Trajectory data from fishing trips were analysed for characterizing fisher spatial behaviour at multiple scales. Several generative and discriminative methods were compared for inferring the behavioural mode sequences corresponding to those trajectories. Changes in those behaviours were associated to environmental changes (obtained via acoustic and satellite data), and those associations were quantified. Patterns of spatial behaviour were classified into groups related to particular fishing strategies. Programming in Matlab and R. \textit{Three first-author publications} were produced.}
+
+\cventry{2010}{Master Thesis}{\textsc{Montpellier SupAgro and UM2}}{Montpellier}{France}{}
+\cvitem{Subject}{\emph{Random walk model fitting and selection for fishing trajectories}}
+\cvitem{Supervisors}{Dr. Sophie Bertrand (IRD) and Dr. Jean-Michel Marin (UM2)}
+\cvitem{Description}{Comparison of Brownian and L\'evy walks through the tails of their probability distributions. Several tests of goodness-of-fit and model selection criteria were investigated, as well as the sensitivity of model selection and goodness-of-fit results to the definition of the tail of the distribution. The case of study consisted of three fishing vessel trajectories. All codes were written in R. \textit{One co-authored publication} was produced.}
+
+\cventry{2008--2009}{Bachelor Thesis}{\textsc{UNI}}{Lima}{Peru}{}
+\cvitem{Subject}{\emph{Artificial neural networks for identifying locations of fishing operations from trajectory data}}
+\cvitem{Supervisor}{Dr. Sophie Bertrand (IRD)}
+\cvitem{Description}{Calibration and sensitivity analysis of neural networks to identify geolocation records corresponding to fishing behaviour. All codes were written in Matlab. A graphic interface in Matlab was developed to facilitate a daily use of the neural network for monitoring the fishery. \textit{One first-author publication} was produced.}
+
+
+%------------------------------------------------
+
+%\cventry{2014--2016}{Research fellow}{\textsc{Peruvian Institute of the Sea}}{Callao}{Peru}{Spatiotemporal analyses of the dynamics of the industrial and artisanal fishing fleets; development of sampling methods for monitoring the fishery.}
+
+%\cventry{2010}{Research internship}{\textsc{Peruvian Institute of the Sea}}{Callao}{Peru}{Spatiotemporal analyses of the dynamics of the industrial and artisanal fishing fleets; development of sampling methods for monitoring the fishery.}
+
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Grants, bursaries and Awards}
+% sftraj
+\cvitem{2019}{University of Florida Open Access Publishing Fund ($\$ 1500$ for publishing in an open access journal)}
+\cvitem{2014}{ISEC (International Statistical Ecology Conference) registration fee bursary}
+\cvitem{2010--2013}{ARTS research grant for PhD students from the IRD}
+\cvitem{2009--2010}{Eiffel Excellence Scholarship for Master students from the French Ministry of Foreign Affairs and International Development}
+\cvitem{2008}{Award from the UNI for students who graduate at the first place from their schools.}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Publications}
+
+\subsection{(17 in total; H-index: 7)}
+
+\cvitem{2021-3}{Torres-Irineo, Salas, Eu\'an-\'Avila, Palomo, Quijano Qui\~nones, Coronado, \textbf{Joo}. Spatio-temporal determination of small-scale vessels' fishing grounds from a vessel monitoring system in the Southeastern Gulf of Mexico. Frontiers in Marine Science 8 (542).}
+\cvitem{2021-2}{\textbf{Joo}, Bez, Etienne, Marin, Goascoz, Roux, Mahevas. Identifying partners at sea on contrasting fisheries around the world. 2020. ICES Journal of Marine Science. In print.}
+\cvitem{2021-1}{Corbeau, Collet, Pajot, \textbf{Joo}, Thellier, Weimerskirch. Differences in foraging habitat result in contrasting fisheries interactions in two albatross populations. 2021. Marine Ecology Progress Series 663 (197-208)}
+\cvitem{2020-3}{\textbf{Joo}, Picardi, Boone, Clay, Patrick, Romero-Romero, Basille. A decade of movement ecology. 2020. arxiv:2006.00110. Pre-print.}
+\cvitem{2020-2}{Clay, \textbf{Joo}, Weimerskirch, Phillips, den Ouden, Basille, Clusella-Trullas, Assink, Patrick. Sex-specific effects of wind on the flight decisions of a sexually dimorphic soaring bird. 2020. Journal of animal ecology 89 (1811-1823).}
+\cvitem{2020-1}{\textbf{Joo}, Boone, Clay, Patrick, Clusella-Trullas, Basille. Navigating through the R packages for movement. 2020. Journal of animal ecology 89 (248-267).}
+\cvitem{2018-1}{\textbf{Joo}, Etienne, Bez, Mahevas. Metrics for describing dyadic movement: a review. 2018. Movement ecology 6 (26)}
+\cvitem{2017-1}{\textbf{Joo}, Diaz. Optimum sample size for estimating anchovy length distribution and the proportion of juveniles per fishing set for the Peruvian purse-seine fleet. 2017. Revista Peruana de Biologia 24 (059-066).}
+\cvitem{2016-1}{\textbf{Joo}, Grados, Bouchon and Diaz. Optimum sample size for a program of observers on board fishing vessels targetting Peruvian anchovy (Engraulis ringens). 2016. Revista Peruana de Biologia 23 (169-182)}
+\cvitem{2015-3}{\textbf{Joo}, Salcedo, Gutierrez, Fablet and Bertrand. Defining fishing spatial strategies from VMS data: insights from the world's largest monospecific fishery. 2015. Fisheries Research 164 (223-230)}
+\cvitem{2015-2}{Bertrand, \textbf{Joo} and Fablet. Generalized Pareto for Pattern-Oriented Random Walk Modelling of Organisms' Movements. 2015. PLOS ONE 10 (e0132231)}
+\cvitem{2015-1}{Maufroy, Chassot, \textbf{Joo}, and Kaplan. First large-scale examination of spatio-temporal patterns of drifting fish aggregating devices from tropical tuna fisheries of the Indian and Atlantic Oceans. 2015. PLOS ONE 10 (e0128023)}
+\cvitem{2014-1}{\textbf{Joo}, Bertrand, Bouchon, Segura, Chaigneau, Demarcq, Tam, Simier, Gutierrez, Gutierrez, Fablet and Bertrand. Ecosystem scenarios shape fishing spatial behaviour. The case of the anchovy fishery in the Northern Humboldt Current System. 2014. Progress in Oceanography 128 (60-73)}
+\cvitem{2013-1}{\textbf{Joo}, Bertrand, Tam and Fablet. Hidden Markov models: the best models for forager movements? 2013. PLOS ONE 8 (e71246)}
+\cvitem{2012-1}{Bertrand, \textbf{Joo}, Arbulu Smet, Tremblay, Barbraud and Weimerskirch. Local depletion by a fishery can affect seabird foraging. 2012. Journal of Applied Ecology 49 (1168-1177)}
+\cvitem{2011-1}{\textbf{Joo}, Bertrand, Chaigneau and \~Niquen. Optimization of an artificial neural network for identification of fishing event positions from Vessel Monitoring System data. 2011. Ecological Modelling 222 (1048-1059)}
+\cvitem{In review}{Bez, Etienne, Bertrand, Rivot, \textbf{Joo}, de Pontual, Woillez, Vermard, Walker, Gloaguen, Mahevas. Evaluating Markov state space models' performances on annotated trajectories: simulation-estimation experiments and real cases.}
+
+\section{Code and data repositories}
+\cvitem{2020-3}{\textbf{Joo}, Marin, Etienne, Bez, Roux, Mahevas. Identifying partners at sea on contrasting fisheries around the world. Zenodo repository and companion website of the manuscript. https://zenodo.org/record/4016377 and https://rociojoo.github.io/partners-at-sea/ respectively.}
+\cvitem{2020-2}{\textbf{Joo}, Picardi, Boone, Clay, Patrick, Romero-Romero, Basille. A decade of movement ecology. Companion website of the manuscript. https://rociojoo.github.io/mov-eco-review/}
+\cvitem{2020-1}{Clay, \textbf{Joo}, Weimerskirch, Phillips, den Ouden, Basille, Clusella-Trullas, Assink, Patrick. Sex-specific effects of wind on the flight decisions of a sexually dimorphic soaring bird: Data and R code (version v.1.0). Zenodo repository. DOI: https://doi.org/10.5281/zenodo.38240645}
+\cvitem{2018-1}{\textbf{Joo}, Boone, Clay, Patrick, Clusella-Trullas, Basille. Navigating through the R packages for movement: Supporting Information. Zenodo repository. DOI: https://doi.org/10.5281/zenodo.3066225}
+
+
+% \cvitem{\textit{In prep.}-2}{\textbf{Joo}, Bez, Etienne, Marin, Mahevas. Moving together: identifying dyad movement patterns from fisheries around the world}
+% \cvitem{\textit{In prep.}-1}{\textbf{Joo}, Bertrand, Bertrand, Bez, Camasca, Grados, Gutierrez. Fishermen spatial behaviour and fish acoustic biomass: two sides of the same coin?}
+
+%----------------------------------------------------------------------------------------
+%	REVIEWING ACTIVITY SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Article reviews}
+
+\subsection{(for 17 journals: publons.com/a/1203864/)}
+
+\cvitem{}{Animal Behaviour, Behavioural Ecology and Sociobiology, Canadian Journal of Fisheries and Aquatic Sciences, Computer Methods and Programs in Biomedicine, Ecological Indicators, Ecological Modelling, Ecology, Ecology and Evolution, ICES Journal of Marine Science, IEEE Journal of Oceanic Engineering, IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, Journal of Spatial Information Science, Journal of Statistical Software, Methods in Ecology and Evolution, Movement Ecology, PLOS ONE, and Regional Studies in Marine Science}
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH GROUPS AND PROJECTS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Research groups, projects and scientific boards}
+
+\subsection{Research Groups}
+
+\cvitem{2016--Present}{EcoStat (Statistical ecology) research group. https://sites.google.com/site/gdrecostat/}
+
+\cvitem{2013--Present}{Moving2Gather trajectometry group. https://moving2gather.github.io/}
+
+\subsection{Projects}
+
+\cvitem{2019--2020}{sftrack, an R package for movement. https://github.com/mablab/sftrack}
+
+\cvitem{2018--2021}{Seabird Infrasound. https://seabirdsound.org/}
+
+\cvitem{2010--2019}{LMI DISCOH (International Joint Laboratory of the Dynamics of the Humboldt Current System). http://www.discoh.ird.fr/le-projet-lmi-discoh/presentation}
+
+\cvitem{2014--2017}{JEAI EMACEP (Quantitative ecology in the Peruvian upwelling system). Leader of the `Spatial ecology in a changing climate' axis. https://en.ird.fr/ird.fr/partnerships/capacity-building/specific-programs/jeai-program/some-jeais/latin-america-and-the-caribbean/jeai-emacep-peru-2014-2017}
+
+\cvitem{2008--2013}{ANR TOPINEME (Top predators as indicators of ecosystem dynamics). http://es.discoh.ird.fr/content/view/full/42757}
+
+\subsection{Scientific advisory boards}
+
+\cvitem{2018--Present}{Humboldt Institute of Marine and Aquaculture Research (IMHA), Peru. http://ihma.org.pe/en/quienes-somos/}
+
+
+%----------------------------------------------------------------------------------------
+%	COMMUNICATION SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Communications}
+
+\subsection{(74 in total; 34 international; 17 invited; 17 national; 10 in research groups; 10 at universities and research institutions; 2 in Ministries)} 
+
+% 2020: International: 7; Sud: 4; National: 4; RG: 0; Invited 2
+
+\cvitem{2020-12}{\textbf{Joo}. Hidden topics in documents and other text analyses. Invited talk at `Data Fest Tbilisi'. Virtual. December 16th, 2020.} %International %Invited
+
+\cvitem{2020-11}{\textbf{Joo}, Boone, Picardi, Romero-Romero, Clay, Patrick, Basille. Modeling research topics in movement ecology. Contributed talk at the `Online Learning Series' of the International Biometric Conference. Virtual. July-August, 2020.} %International % Sud
+
+\cvitem{2020-10}{Dejeante, \textbf{Joo}, Boone, Basille. Trash pandas in their natural environment - or how raccoons use and abuse human trash. Contributed talk at the Annual meeting of the `Ecological Society of America'. Virtual. August 3rd to 6th, 2020.} %National
+
+\cvitem{2020-09}{Boone, \textbf{Joo}, Basille. Introducing sftrack: A framework for movement data in R. Contributed talk at the Annual meeting of the `Ecological Society of America'. Virtual. August 3rd to 6th, 2020.} %National
+
+\cvitem{2020-08}{Poongavanan, \textbf{Joo}, Basille. Replicability and reproducibility in movement ecology. Poster at the Annual meeting of the `Ecological Society of America'. Virtual. August 3rd to 6th, 2020.} %National
+
+\cvitem{2020-07}{\textbf{Joo}, Picardi, Boone, Clay, Clusella-Trullas, Patrick, Basille. Successes and failures of movement ecology. Contributed talk at the Annual meeting of the `Ecological Society of America'. Virtual. August 3rd to 6th, 2020.} %National %Sud
+
+\cvitem{2020-06}{\textbf{Joo}. Finding hidden topics in documents and other text analyses. Invited talk at `R-ladies Tbilisi' meeting. Virtual. July 14th, 2020.} %Local %Invited
+
+\cvitem{2020-05}{Acion, Alfaro, Bazurto, [and 32 others, including \textbf{Joo}]. Communities of practice in Latin America: R and Friends. Contributed talk at `useR!2020 The R User Conference'. Global virtual conference. July 6th, 2020.} %International %Sud
+
+\cvitem{2020-04}{\textbf{Joo}, Boone, Clay, Patrick, Clusella-Trullas, Basille. R for movement: lessons for the statistical ecology community. Oral presentation at the `virtual International Statistical Ecology Conference'. June 22nd to 25th, 2020.} %International %Sud
+
+\cvitem{2020-03}{Roux, Bez, \textbf{Joo}, Mah\'evas. An exploratory analysis of fishermen collective behaviour using graphs and graphical models. Oral presentation at Moving2Gather. Rennes, France. March 12th, 2020.} %International
+
+\cvitem{2020-02}{\textbf{Joo}, Boone, Calenge, Van Loon and Basille. sftraj, an R package for movement data. Oral presentation at Moving2Gather. Rennes, France. March 11th, 2020.} %International
+
+\cvitem{2020-01}{Dejeante, \textbf{Joo}, Boone and Basille. Trash pandas in their natural environment -- or how raccoons use and abuse human trash. Oral presentation at Moving2Gather. Rennes, France. March 11th, 2020.} %International
+
+% 2019: International: 6; Sud: 7; National: 2; RG: 2; Invited 4
+\cvitem{2019-12}{\textbf{Joo}. Text mining scientific papers with R. Invited talk at `R-ladies meeting'. Miami, USA. November 26th, 2019.} %Local %Invited
+\cvitem{2019-11}{Ouden, Assink, Basille, Clay, Clusella-Trullas, Patrick, \textbf{Joo}, Zeyl. The SeabirdSound project (LTD). Oral communication at `Bio-Acoustics'. Lelystad, The Netherlands. Oct. 2019.} %Sud %International 
+\cvitem{2019-10}{\textbf{Joo}, Boone, Clay, Patrick, Clusella-Trullas, Basille. R in movement. Oral communication at the `LatinR' Conference. Santiago, Chile. September 25th to 27th, 2019.} %International %Sud 
+\cvitem{2019-9}{\textbf{Joo}, Bertrand, Bouchon, Chaigneau, Demarcq, Tam, Simier, Segura, Gutierrez, Gutierrez, Fablet, Bertrand. How do ecosystem conditions shape fishermen spatial behaviour? The case of the Peruvian anchovy fishery in the northern Humboldt current system. Oral communication at `Scientific conference cycle at PUCP'. Lima, Peru. September 12th, 2019.} %Local %Sud %Invited
+\cvitem{2019-8}{\textbf{Joo}. Scientific text mining. Invited talk at `R-ladies meeting'. Lima, Peru. September 4th, 2019.} %Local %Sud %Invited
+\cvitem{2019-7}{\textbf{Joo}. Statistics and knowledge. Keynote speech at the `National Conference of Statistics Students'. Lima, Peru. September 2nd to 6th, 2019.} %National %Sud %Invited
+\cvitem{2019-6}{\textbf{Joo}, Boone, Clay, Patrick, Clusella-Trullas, Basille. Navigating through the R packages for movement. Oral communication at the `useR!2019' Conference. Toulouse, France. July 9th to 12th, 2019.} %International %Sud
+\cvitem{2019-5}{\textbf{Joo}, Clay, Picardi, Boone, Patrick, Clusella-Trullas, Basille. Reviewing movement ecology: publications and R packages. Oral communication at the `Statistical Ecology Research Group Meeting'. Avignon, France. May 13th to 14th, 2019.} %RG
+\cvitem{2019-4}{\textbf{Joo}, Picardi, Clay, Boone, Patrick, Basille. Reviewing a decade of movement ecology for conservation. Oral communication at Greater Everglades Ecosystem Restoration Conference. Coral Springs, USA. April 22th to 25th, 2019.} % National
+\cvitem{2019-3}{Clay, \textbf{Joo}, Weimerskirch, Phillips, den Ouden, Basille, Assink, Clusella-Trullas, Patrick. Movement decisions are strongly influenced by wind conditions in a soaring seabird. Poster at the Gordon Research Conference of Movement Ecology of Animals. Barga, Italy. March 3rd to 8th, 2019.} % International % Sud
+\cvitem{2019-2}{\textbf{Joo}, Picardi, Clay, Boone, Patrick, Basille. A decade of movement ecology. Poster at the Gordon Research Conference of Movement Ecology of Animals. Barga, Italy. March 3rd to 8th, 2019.} % International
+\cvitem{2019-1}{\textbf{Joo}, Picardi, Clay, Boone, Patrick, Basille. A decade of movement ecology. Poster at the Gordon Research Seminar of Movement Ecology of Animals. Barga, Italy. March 2nd to 3rd, 2019.} % International
+% 2018: International: 3; National: 1; Sud: 3
+\cvitem{2018-4}{Clay, \textbf{Joo}, Weimerskirch, Phillips, den Ouden, Basille, Assink, Clusella-Trullas, Patrick. Behavioural responses of albatrosses to local wind conditions. Oral communication at the British Ecological Society Annual Meeting. Birmingham, UK. December 16th to 19th, 2018.} % National-UK %Sud
+\cvitem{2018-3}{\textbf{Joo}, Bez, Goascoz, Marin, Mahevas. What can we learn about fleet spatial behavior from dyadic joint movement? Oral communication at the `ICES Annual Science Conference 2018'. Hamburg, Germany. September 24th to 27th, 2018.} % International %Sud
+\cvitem{2018-2}{Clay, Weimerskirch, \textbf{Joo}, den Ouden, Basille, Assink, Clusella-Trullas, Patrick. Behavioural responses of albatrosses to local wind conditions. Oral communication at the `14th International Seabird Group Conference'. Liverpool, UK. September 3rd to 6th, 2018.} %International %Sud
+\cvitem{2018-1}{\textbf{Joo}, Etienne, Bez, Mahevas. Metrics for describing dyadic joint movement. Oral communication at the `VIth International Statistical Ecology Conference'. St. Andrews, Scotland. July 2nd to 6th, 2018.} %International
+% 2017: RG: 2 ; International: 4 ; Invited: 1 ; National: 1 ; Sud: 1
+\cvitem{2017-7}{\textbf{Joo}, Etienne, Bez, Mahevas. Indices for assessing joint-movement behaviour in ecology. An application to fisheries. Oral communication at the `Moving2Gather' workshop. Montpellier, France. December 18th to 20th, 2017.} % International
+\cvitem{2017-6}{Marin, \textbf{Joo}. Analysis of VMS data to classify jack mackerel and anchovy fishing trips from the Peruvian industrial purse-seine fleet. Poster at the `XVIIth Latin American Conferences of Sciences of the Sea'. Balneario Camboriu, Santa Catarina, Brasil. November 13th to 17th, 2017.} % International
+\cvitem{2017-5}{\textbf{Joo}, Bez, Etienne, Marin, Goascoz, Mahevas. Collective movement patterns from fisher trajectories around the world. Oral communication at the `XVIIth Latin American Conferences of Sciences of the Sea'. Balneario Camboriu, Santa Catarina, Brasil. November 13th to 17th, 2017.} % International %Sud
+\cvitem{2017-4}{\textbf{Joo}. Movement ecology and trajectometry. Oral communication at `The International Conference of Stochastic Processes, Random Phenomena and Applications'. Lima, Peru. October 5th to 7th, 2017.} %Invited %International
+\cvitem{2017-3}{\textbf{Joo}, Bez, Etienne, Mahevas. Identification of dyad movement patterns from fisher trajectory data around the world. Oral communication at the `13th Conferences of the French Association of Fisheries: Fisheries and global changes'. Nantes, France. June 28th to 30th, 2017.} % National-French
+\cvitem{2017-2}{\textbf{Joo}, Etienne, Bez, Mahevas. Indices for assessing joint-movement behaviour in ecology. Oral communication at the `Statistical Ecology Research Group Meeting'. Nantes, France. May 22nd to 23rd, 2017.} %RG
+\cvitem{2017-1}{\textbf{Joo}. A primer in the identification of dyad movement patterns from fisher trajectory
+data. Oral communication at the `PathTIS Trajectometry Working Group Meeting'. Montpellier, France. January 30th to 31st, 2017.} %RG
+% 2016: National: 5 ; RG: 1; Sud: 4
+\cvitem{2016-6}{Bez, Etienne, Mahevas, Bertrand, Chadoeuf, Coville, Delattre, Gloaguen, Goulard, \textbf{Joo}, Lang, Le Corff, Nerini, Monestiez, Rivot, Senoussi, Vermard, Walker, Woillez. The PathTIS (Path Tool and analysIS) network: tools and methods to analyse trajectories in movement ecology. Oral communication at the `Biologging and Environment Conference'. Montpellier, France. December 5th, 2016.} %National-France
+\cvitem{2016-5}{Pozada-Herrera, \textbf{Joo}. Characterizing fishing sets from the industrial purse-seiner anchovy (\textit{Engraulis ringens}) fishery using on-board observers data. Oral communication at the `Vth Conferences of Sciences of the Sea'. Lambayeque, Peru. November 21th to 25th, 2016.} %National-Peru %Sud
+\cvitem{2016-4}{Vilela, D\'{i}az, \textbf{Joo}. Daily variability of the anchovy (\textit{Engraulis ringens}) fishery catches from the north-center Peruvian region. Oral communication at the `Vth Conferences of Sciences of the Sea'. Lambayeque, Peru. November 21th to 25th, 2016.} %National-Peru %Sud
+\cvitem{2016-3}{Marin, \textbf{Joo}. Supervised learning methods for classifying anchovy and jack-mackerel fishing trips from the industrial purse-seiner Peruvian fleet using vessel monitoring system data. Oral communication at the `Vth Conferences of Sciences of the Sea'. Lambayeque, Peru. November 21th to 25th, 2016.} %National-Peru %Sud
+\cvitem{2016-2}{Tacuri, Marin, Yamashiro, \textbf{Joo}. Patterns of fishing activity in the artisanal fishery: analyzing catches and fishing zones of vessels using gillnets and long lines. Poster at the `Vth Conferences of Sciences of the Sea'. Lambayeque, Peru. November 21th to 25th, 2016.} %National-Peru %Sud
+\cvitem{2016-1}{\textbf{Joo}. How to characterize the interaction between fishing vessel trajectories? Oral communication at the `PathTIS Trajectometry Working Group Meeting'. Paris, France. June 16th, 2016.} %RG
+% 2015: International: 3 ; Invited: 1 ; RG: 2 ; Sud: 2
+\cvitem{2015-5}{\textbf{Joo}, Bertrand, Bouchon, Chaigneau, Demarcq, Tam, Simier, Segura, Gutierrez, Gutierrez, Fablet, Bertrand. How do ecosystem conditions shape fishermen spatial behaviour? The case of the Peruvian anchovy fishery in the northern Humboldt current system. Oral communication at the `XVIth Latin American Conferences of Sciences of the Sea'. Santa Marta, Colombia. October 17th to 22nd, 2015.} %International %Sud
+\cvitem{2015-4}{\textbf{Joo}. Fishermen and fish acoustic biomass: two sides of the same coin? Invited conference at the `1st International Workshop of the SPRFMO Scientif Committee Task Group on standardization of Acoustic Data: Fishing vessels as scientific platforms'. Lima, Peru. September 8th to 11th, 2015.} %Invited %International
+\cvitem{2015-3}{\textbf{Joo}, Camasca, Grados, Bertrand, Fablet, Bez, Segura, Bertrand. Fishermen and fish acoustic biomass: two sides of the same coin? Oral communication at the ICES Symposium `Marine Ecosystem Acoustics -- Observing the Ocean Interior in Support of Integrated Management'. Nantes, France. May 25th to 28th, 2015.} %International %Sud
+\cvitem{2015-2}{Bertrand, \textbf{Joo}. VMS and fisheries ecology: balance and perspectives. Oral communication at the `Statistical Ecology Research Group Meeting'. Lyon, France. March 12th to 13th, 2015.} %RG
+\cvitem{2015-1}{Nerini, Bertrand, \textbf{Joo}. Dynamical detection of communities -- the case of the Peruvian fishery. Oral communication at the `Statistical Ecology Research Group Meeting'. Lyon, France. March 12th to 13th, 2015.} %RG
+%2014: Invited: 6 ; University: 3 ; RI: 1 ; International: 5 ; National: 3 ; Ministry: 1; Sud: 4
+\cvitem{2014-13}{\textbf{Joo}. Fishing trajectories and their contributions to fisheries science, monitoring, management and the preservation of the ecosystem. Invited conference at the `Statistics and Economics Conferences' at UNI. Lima, Peru. November 28th, 2014.} %Invited %University
+\cvitem{2014-12}{\textbf{Joo}, Grados, Camasca, Bertrand, Bertrand, Fablet, Bez. Fishermen spatial behaviour and fish acoustic biomass: two sides of the same coin? Invited conference at the `Workshop on acoustic methods for the assessment of the Peruvian upwelling ecosystem'. Callao, Peru. November 3rd to 7th, 2014.} %Invited %RI % Sud
+\cvitem{2014-11}{\textbf{Joo}. Modeling types of behavior in the movement of individuals. Invited conference at the `Seminars of Applied Statistics' at PUCP. Lima, Peru. October 23rd, 2014.} %Invited %University
+\cvitem{2014-10}{Torres-Irineo, Salas, Eu\'an-\'Avila, \textbf{Joo}, Palomo-Cort\'es. Assessment of the spatial distribution of small-scale vessels' operations from VMS data in the southeastern Mexico. Oral communication at the `2nd World Small-Scale Fisheries Congress'. Merida, Mexico. September 21st to 26th, 2014.} %International
+\cvitem{2014-9}{\textbf{Joo}, Grados, Bertrand, Bouchon, Bertrand, Segura, Fablet, Gutierrez, Bez. Fishermen spatial behaviour and fish acoustic biomass: two sides of the same coin? Poster at the `Xth Conference on Geostatistics for Environmental Applications'. Paris, France. July 9th to 11th, 2014.} %International %Sud
+\cvitem{2014-8}{\textbf{Joo}, Bertrand, Fablet. Supervised vs. non-supervised hidden Markov modelling for inferring behavioural modes from movement paths. Oral communication at the `IVth International Statistical Ecology Conference'. Montpellier, France. July 4th to 7th, 2014.} %International
+\cvitem{2014-7}{Mah\'evas, Bez, Etienne, Monestiez, Rivot, Gloaguen, Vermard, Woillez, Bertrand, \textbf{Joo}, 
+Delattre, Nerini, Walker, de Pontual. Validation data: keystone to assess performance of state-space models for movement. Oral communication at the `IVth International Statistical Ecology Conference'. Montpellier, France. July 4th to 7th, 2014.} %International
+\cvitem{2014-6}{\textbf{Joo}, Salcedo, Segura, Bouchon, Gutierrez, Fablet, Bertrand. Characterizing purse-seine anchovy fishing trips. An integration of on-board observers and vessel monitoring system information. Oral communication at the `IVth Conferences of Sciences of the Sea'. Lima, Peru. June 24th to 28th, 2014.} %National-Peru %Sud
+\cvitem{2014-5}{Bertrand, \textbf{Joo}. Vessel monitoring systems. Balance and perspectives. Oral communication at the `IVth Conferences of Sciences of the Sea'. Lima, Peru. June 24th to 28th, 2014.} %National-Peru % Sud
+\cvitem{2014-4}{\textbf{Joo}, Bertrand, Bouchon, Chaigneau, Demarcq, Tam, Simier, Segura, Gutierrez, Gutierrez, Fablet, Bertrand. How do ecosystem conditions shape fishermen spatial behaviour? The case of the Peruvian anchovy fishery in the northern Humboldt current system. Oral communication at the `IVth Conferences of Sciences of the Sea'. Lima, Peru. June 24th to 28th, 2014.} %National-Peru % Sud
+\cvitem{2014-3}{\textbf{Joo}. Vessel monitoring system: contributions to science, fisheries monitoring and management. Invited conference at the Ministry of Production. Lima, Peru. May 23rd, 2014.} %Invited %Ministry
+\cvitem{2014-2}{\textbf{Joo}. Fishermen behaviour and its drivers: hidden stories from VMS, acoustics and satellite data in an ecosystem approach to fisheries. Invited presentation at the `International Workshop of Fishing Vessels as Scientific Platforms: Indicators and Protocols for an Ecosystem Approach for Pelagic Fisheries'. Lima, Peru. April 28th to May 2nd, 2014.} %International %Invited
+\cvitem{2014-1}{\textbf{Joo}. A behavioural ecology of fishermen: hidden stories from trajectory data in the Northern Humboldt Current system. Invited conference at UNI. Lima, Peru. March 27th, 2014.} %Invited %University
+%2013: RG:1; Invited: 1; Ministry: 1: Sud: 1
+\cvitem{2013-2}{\textbf{Joo}, Grados. Maps of probability of anchovy presence. Oral communication at the `Top predators as indicators of exploited marine ecosystem dynamics Project Meeting'. Montpellier, France. June 15th, 2013.} %RG % Sud
+\cvitem{2013-1}{\textbf{Joo}. Vessel monitoring system: contributions to science progress and ecosystem-based management. Invited conference at the Ministry of the Environment. Lima, Peru. March 5th, 2013.} %Invited %Ministry
+%2012: Invited:2  University:3  RG:2  International:3  National: 2; Sud: 4
+\cvitem{2012-10}{\textbf{Joo}. Eddies, fish, birds and fishers. The role of statistics in marine ecology. Invited conference at the `Statistics Conferences' at UNI. Lima, Peru. December 5th, 2012.} %Invited %University
+\cvitem{2012-9}{\textbf{Joo}, Fablet, Tam, Bertrand. Hidden semi-Markov modelling for behavioural modes in foraging movement. Oral communication at the `IIIrd International Statistical Ecology Conference'. Krokkleiva, Norway. July 3rd to 6th, 2012.} %International %Sud
+\cvitem{2012-8}{Bertrand, \textbf{Joo}, Fablet. Do foragers move L\'evy or not? Let Generalized Pareto decide. Oral communication at the `IIIrd International Statistical Ecology Conference'. Krokkleiva, Norway. July 3rd to 6th, 2012.} %International
+\cvitem{2012-7}{\textbf{Joo}, Tam, Bouchon, Atiquipa, Fablet, Bertrand. Fishing, searching or cruising? A statistical approach for modeling activities from purse-seine anchovy vessels during fishing trips. Oral communication at the `IIIrd Conferences of Sciences of the Sea'. Lima, Peru. June 25th to 29th, 2012.} %National %Sud
+\cvitem{2012-6}{Bertrand, Arbulu, Barbraud, Bertrand, Castillo, Chaigneau, Delord, Demarcq, Fablet, Goya, \textbf{Joo}, Passuni, Peraltilla, Quiroz, Silva, Torres, Tremblay, Weimerskirch. TOPINEME project results. Oral communication at the `IIIrd Conferences of Sciences of the Sea'. Lima, Peru. June 25th to 29th, 2012.} %National %Sud
+\cvitem{2012-5}{\textbf{Joo}, Fablet, Bertrand. Reconstruction of state sequences from tracking data using bayesian Markov models. Oral communication at the `PathTIS Trajectometry Working Group Meeting'. Paris, France. June 25th, 2012.} %RG 
+\cvitem{2012-4}{Iriarte, Vinatea, \textbf{Joo}, Fréon. Fuel consumption of the Peruvian industrial anchoveta fishery: Methodological issues and sources of variability. Oral communication at the `6th World Fisheries Congress: Sustainable Fisheries in a Changing World'. Edinburgh, Scotland. May 7th to 11th, 2012.} %International %Sud
+\cvitem{2012-3}{\textbf{Joo}. Markovian and discriminative models for modelling movement of fishing vessels. Invited conference at the `Seminars of Applied Mathematics' at PUCP. Lima, Peru. April 10th, 2012.} %Invited %University
+\cvitem{2012-2}{\textbf{Joo}, Fablet, Bertrand, Bouchon, Atiquipa, Tam. Searching, fishing or travelling? A statistical approach for modelling fishers' behaviour. Oral communication at the `Dynamics of the Humboldt Current System Working Group Meeting'. Callao, Peru. March 31st, 2012.} %RG %Sud
+\cvitem{2012-1}{\textbf{Joo}. Markovian processes for modelling the movement of fishing vessels. Oral communication at the `Seminars of Statistics and Probabilities' at UM2. Montpellier, France. January 30th, 2012.} %University
+% 2011: 1 RI, 1RG, 1 University; Sud: 0
+\cvitem{2011-3}{\textbf{Joo}. A statistical approach for modelling the movement of fishing vessels. Oral communication at the Laboratory of Sciences of the Marine Environment. Brest, France. December 15th, 2011.} %RI
+\cvitem{2011-2}{\textbf{Joo}. Markovian processes for modelling the movement of fishing vessels. Oral communication at the `Seminars of the Information and Communication Science and Technology Laboratory' at Telecom Bretagne. Brest, France. December 1st, 2011.} %University
+\cvitem{2011-1}{\textbf{Joo}. How do biotic interactions and environmental conditions shape the movement of fishing vessels? Oral communication at the `Top predators as indicators of exploited marine ecosystem dynamics Project Meeting'. Sete, France. October 5th, 2011.} %RG 
+% 2010-2008: 3 Internationals; Sud: 3
+\cvitem{2010-2}{\textbf{Joo}, Bertrand, Marin, Fablet, Oliveros-Ramos. Random-walk approach for modelling animal movement. Oral communication at the `XXVth International Biometric Conference'. Floripa, Brazil. December 5th to 10th, 2010.} %International % Sud
+\cvitem{2010-1}{Bertrand, Weimerskirch, Tremblay, Castillo, Silva, \textbf{Joo}, Passuni. Seabirds and fishers competing for the same prey off Peru. Oral communication at the `1st World Seabird Conference'. Victoria, Canada. September 7th to 11th, 2010.} %International % Sud
+\cvitem{2008-1}{Bertrand, Chaigneau, \textbf{Joo}, Marquez, Weimerskirch. Fishers and marine birds competing for the same fish: Foraging strategies and interactions. Oral communication at the `Eastern boundary upwelling ecosystems Conferences'. Las Palmas, Spain. June 2nd to 6th, 2008.} %International %Sud
+
+
+%----------------------------------------------------------------------------------------
+%	TEACHING SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Teaching activities}
+
+\subsection{(369 hours)}
+
+% 2020: 38
+
+\cvitem{2020-2}{`R for Biologging'. Instructor. Online course organized by the Universidad Cient\'ifica del Sur, Lima, Peru. 36 hours. November-December, 2020.}
+
+\cvitem{2020-1}{`Movement visualization with R'. Instructor during the moving2gather conference at Agrocampus Ouest, Rennes, France. 2 hours. March, 2020.}
+
+% 2019: 14 
+\cvitem{2019-1}{`Data Carpentry - Ecology Workshop' (data organization, cleaning, management, visualization and analysis with R and SQL). Instructor and helper at the Tropical Research and Education Center, University of Florida, Homestead, USA. 14 hours. April, 2019.}
+  % 
+
+% 2018: 18
+\cvitem{2018-2}{`Hidden Markov models with MomentuHMM'. Workshop instructor at the University of Liverpool, Liverpool, UK. 4 hours. May, 2018.}
+
+\cvitem{2018-1}{`Data Carpentry - Ecology Workshop' (data organization, cleaning, management, visualization and analysis with R and SQL). Instructor and helper at the Fort Lauderdale Research and Education Center, University of Florida, Davie, USA. 14 hours. April, 2018.}
+
+% 2017: 55
+\cvitem{2017-1}{`Statistics for research and R'. Statistics instructor in the `Field Techniques and Tropical Ecology Course' at the Cocha Cashu Biological Station, Manu National Park, Peru. 55 hours. October, 2017.}
+
+% 2015: 154
+\cvitem{2015-8}{`Processing and analysing Vessel Monitoring System data'. Workshop instructor (talks and practical work for researchers and master students). Fishing Institute (IFOP). Valparaiso, Chile. 30 hours. December, 2015.}
+
+\cvitem{2015-7}{`Multivariate Analysis'. Lecturer. Masters program in Statistics at PUCP. Lima, Peru. 16 hours. November--December, 2015.}
+
+\cvitem{2015-6}{`Time Series with R'. Instructor. Workshop at IMARPE. Callao, Peru. 25 hours. November, 2015.}
+
+\cvitem{2015-5}{`Geostatistics'. Instructor. Workshop at PUCP. Lima, Peru. 10 hours. August, 2015.}
+
+\cvitem{2015-4}{`Movement Ecology'. Instructor. Workshop at United Nations Development Programme headquarters. Lima, Peru. 8 hours. July, 2015.}
+
+\cvitem{2015-3}{`Data Mining'. Lecturer. Masters program in Statistics at PUCP. Lima, Peru. 32 hours. May--July, 2015.}
+
+\cvitem{2015-2}{`Geostatistics'. Instructor. Workshop at IMARPE. Callao, Peru. 25 hours. April, 2015.}
+
+\cvitem{2015-1}{`Movement Ecology'. Instructor. Workshop at Nelson Mandela Metropolitan University. Port Elizabeth, South Africa. 8 hours. February, 2015.}
+
+%2005-2011: 90
+\cvitem{2011-1}{`Introduction to R Programming'. Instructor. Workshop at IMARPE. Callao, Peru. 8 hours. July, 2011.}
+
+\cvitem{2010-1}{`Statistics'. Lecturer. Masters program in Marine Science at UPCH. Lima, Peru. 10 hours. October, 2010.}
+
+\cvitem{2007-1}{`Biostatistics'. Teaching assistant. Undergraduate program in Statistics Engineering at UNI. Lima, Peru. 60 hours. September 2007 to January 2008.}
+
+\cvitem{2005-1}{`Introduction to Statistics'. Lecturer. Undergraduate program in Statistics Engineering at UNI. Lima, Peru. 12 hours. October, 2005.}
+
+
+%----------------------------------------------------------------------------------------
+%	STUDENTS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Students}
+
+\subsection{(9 in total; 6 as main advisor; 2 in master level)}
+
+\cvitem{2019--2021}{Jenicca Poongavanan. Reproducibility in movement ecology. University of Florida. Gainesville, USA. Master in the School of Natural Resources and the Environment.}
+
+\cvitem{2016--2017}{Pablo Marin. Comparing classification methods for fishing trips in the Peruvian pelagic fishery. Major National University of San Marcos (UNMSM). Lima, Peru. Master in Statistics.}
+
+\cvitem{2016--2017}{Paul Tacuri. Analysing the spatial behaviour of artisanal fishers through their fishing set locations and species composition. UNMSM. Lima, Peru. Bachelor in Biology.}
+
+\cvitem{2016--2017}{Icaro Santos Da Silva. Spatial patterns of open sea canoes out of Sergipe waters. Federal University of Sergipe. Sergipe, Brazil. Bachelor in Fisheries Science. Main advisor: M. Thom\'e de Souza.}
+
+\cvitem{2016--2017}{Fiorella Vilela. Inter-season variability of the anchovy fishery daily catches from 2002 to 2015. Peruvian University Cayetano Heredia (UPCH). Lima, Peru. Bachelor in Biology. Main advisor: E. Diaz.}
+
+\cvitem{2015--2016}{Marissela Pozada. Multivariate characterization of the fishing sets in the Peruvian pelagic fishery using on-board observers' data. National Agrarian University of La Molina. Lima, Peru. Bachelor in Fisheries Science.}
+
+\cvitem{2014--2015}{Rommy Camasca. Comparing random field patterns modelled under a geostatistical approach: an application to fisheries ecology. UNI. Lima, Peru. Bachelor in Statistics Engineering.}
+
+\cvitem{2014--2015}{Christian Amao. Spatio-temporal patterns of variability related to El Ni\~no Southern Oscillation characterized via Empirical Orthogonal Functions and the time-domain analysis of principal components. UNI. Lima, Peru. Bachelor in Statistics Engineering. Main advisor: S. Camiz (Sapienza Universita di Roma). Other advisors: D. Grados, C. Quispe, J. Tam, A. Ordo\~nez}
+
+\cvitem{2013--2014}{Omar Salcedo. Hierarchical and non hierarchical clustering methods and quasi-experimental design for characterizing fishing trip strategies. UNI. Lima, Peru. Bachelor in Statistics Engineering.}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Computer skills}
+
+\cvitem{Statistics / Applied mathematics}{R, Matlab}
+\cvitem{Miscelaneous}{\LaTeX, Git, Linux, Zotero}
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Languages}
+
+\cvitemwithcomment{Spanish}{Mother-tongue}{}
+\cvitemwithcomment{English}{Fluent}{}
+\cvitemwithcomment{French}{Fluent}{}
+\cvitemwithcomment{Portuguese}{Intermediate}{(basic conversation)}
+
+
+%----------------------------------------------------------------------------------------
+%	SCIENTIFIC EVENTS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Organization of scientific events}
+
+\cvitem{2021-1}{useR2021: The R user conference. Lead Team. Global and virtual. July 5th to 7th, 2021.}
+
+\cvitem{2020-1}{Moving2Gather: trajectometry conference. Moving2Gather research team. Agrocampus Ouest. Rennes, France. March 11th to 13th, 2020.}
+
+\cvitem{2018-1}{Human Frontiers Science Program (HFSP) Workshop on infrasound and avian navigation. HFSP team. University of Liverpool. Liverpool, UK. May 15th to 17th, 2018.}
+
+\cvitem{2014-1}{`Workshop on acoustic methods for the assessment of the Peruvian Upwelling Ecosystem'. Scientific and local committees. IMARPE. Callao, Peru. November 3rd to 7th, 2014.}
+
+\cvitem{2007-1}{`Xth Latin American Congress of Probability and Mathematical Statistics'. Support to local committee. PUCP. Lima, Peru. February 25th to March 3rd, 2007.}
+
+\cvitem{2005-1}{`VIIth Statistics Students National Meeting'. Head of scientific committee. UNI. Lima, Peru. September 12th to 17th, 2005.}
+
+\cvitem{2004-1}{`1st Statistical Meetings in Lima'. Scientific and local committees. Lima, Peru. December 4th, 2004.}
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
